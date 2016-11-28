@@ -1,0 +1,42 @@
+@import './node_modules/normalize-scss/sass/normalize/import-now';
+
+html, body {
+    height: 100%;
+}
+
+// Main
+#app {
+    height: inherit;
+}
+
+// data-reactroot
+#app > div {
+    height: inherit;
+}
+
+// Hero
+.hero {
+    overflow: auto; // Fix margin
+    width: 100%;
+    height: 100%;
+    background: #333;
+    color: white;
+}
+
+.hero-card {
+    background: #666;
+    margin: 0 auto;
+    width: 720px;
+
+    // Fixed ratio
+    :before {
+        content: "";
+        float: left;
+        padding-bottom: 55%; // 1.8 - Polish bussiness card
+    }
+    :after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
