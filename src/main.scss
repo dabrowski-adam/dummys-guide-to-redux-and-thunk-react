@@ -7,6 +7,16 @@ $browser-context: 20;
   @return #{$pixels/$context}rem;
 }
 
+// Smart underline
+@mixin underline($color, $background, $offset: 98%) {
+    text-shadow: 0.03em 0 $background, -0.03em 0 $background, 0 0.03em $background, 0 -0.03em $background, 0.06em 0 $background, -0.06em 0 $background, 0.09em 0 $background, -0.09em 0 $background, 0.12em 0 $background, -0.12em 0 $background;
+    background: linear-gradient($color, $color);
+    background-size: 2px 2px;
+    background-repeat: repeat-x;
+    background-position-y: $offset;
+    text-decoration: none;
+}
+
 // Main SCSS
 html, body {
     height: 100%;
@@ -93,8 +103,9 @@ html, body {
         box-sizing: border-box;
         display: table;
         table-layout: fixed;
-        width: 100%;
         font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
     }
     li {
         display: table-cell;
@@ -105,6 +116,27 @@ html, body {
     }
 }
 
+.hero-card-front-menu {
+    width: 100%;
+    a {
+       @include underline(#FFF, #666, 98%); 
+    }
+    
+}
+
 .hero-card-front-social {
-    margin-top: 60px;
+    margin-top: 40px;
+    //width: (30px*3)*4;
+    li {
+        display: inline-block;
+        width: 60px;
+        margin-right: 15px;
+        margin-left: 15px;
+        height: 60px;
+    }
+    img {
+        width: 60px;
+        height: 60px;
+        fill: #FFF;
+    }
 }

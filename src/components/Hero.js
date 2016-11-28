@@ -1,3 +1,8 @@
+import linkedin from '../img/linkedin.svg';
+import dribble from '../img/dribble.svg';
+import github from '../img/github.svg';
+import twitter from '../img/twitter.svg';
+
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { heroTurn } from '../actions/hero';
@@ -12,10 +17,10 @@ class Hero extends Component {
                     <li><a href="#">/portfolio</a></li>
                 </ul>
                 <ul className="hero-card-front-social">
-                    <li><a href="#">in</a></li>
-                    <li><a href="#">dr</a></li>
-                    <li><a href="#">gh</a></li>
-                    <li><a href="#">tw</a></li>
+                    <li><a href="#"><img src={linkedin} alt="LinkedIn" /></a></li>
+                    <li><a href="#"><img src={dribble} alt="Dribble" /></a></li>
+                    <li><a href="#"><img src={github} alt="GitHub" /></a></li>
+                    <li><a href="#"><img src={twitter} alt="Twitter" /></a></li>
                 </ul>
             </div>;
     back = <div className="hero-card-back">This is the back</div>;
